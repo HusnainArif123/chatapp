@@ -18,15 +18,13 @@ const CaseCard: React.FC<CaseCardProps> = ({
   buttonText = "Go to case",
 }) => {
   return (
-    <div className="relative w-80 h-48 p-6 rounded-[40px] bg-gradient-to-br from-[#ec4899] via-[#DFAACB] to-[#ec4899] shadow-md overflow-hidden">
-      <Icon className="absolute w-72 h-72 text-white/10 -left-10 -top-16" />
-
+    <div className="relative w-80 h-50 p-6 rounded-[40px] bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 shadow-lg overflow-hidden">
       <div className="relative z-10 flex flex-col justify-between h-40">
         <div>
-          <h2 className="text-lg font-semibold text-gray-800 mb-1 truncate">
+          <h2 className="text-lg font-semibold text-white mb-1 truncate">
             {title}
           </h2>
-          <p className="text-sm text-gray-600 line-clamp-4">{description}</p>
+          <p className="text-sm text-gray-300 line-clamp-4">{description}</p>
         </div>
 
         <div className="mt-4">

@@ -11,7 +11,7 @@ const Login = () => {
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const loginData = {
-    title: "Welcome to Our  Chat App",
+    title: "Welcome to TalkTown",
     description:
       "Login and explore the amazing features we offer. Your journey begins here!",
   };
@@ -28,10 +28,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-pink-200 px-4">
+    <div className="min-h-screen flex justify-center items-center bg-gray-800  px-4">
       <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-5xl">
         {/* Left Side */}
-        <div className="md:w-1/2 p-8 bg-pink-600 text-white flex flex-col justify-center items-center">
+        <div className="md:w-1/2 p-8 bg-gray-900 text-white flex flex-col justify-center items-center">
           <h1 className="text-3xl font-bold">{loginData.title}</h1>
           <p className="text-white/80 mt-4 text-center text-lg font-medium">
             {loginData.description}
@@ -40,7 +40,7 @@ const Login = () => {
 
         {/* Right Side */}
         <div className="md:w-1/2 p-8 flex flex-col justify-center bg-white">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Login Now!
           </h2>
 
@@ -54,7 +54,7 @@ const Login = () => {
                 placeholder="Enter your email"
                 value={user.email}
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"
+                className="w-full mt-1 p-2 border border-gray-900 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-900"
               />
             </div>
 
@@ -67,14 +67,14 @@ const Login = () => {
                 placeholder="Enter your password"
                 value={user.password}
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"
+                className="w-full mt-1 p-2 border border-gray-900 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-900"
               />
             </div>
 
             <button
               disabled={buttonDisabled}
               onClick={handleLogin}
-              className="w-full bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-pink-700 transition duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gray-900  text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-500 transition duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Login
             </button>
@@ -94,7 +94,7 @@ const Login = () => {
               Don’t have an account?{" "}
               <Link
                 href="/signup"
-                className="text-pink-600 font-bold hover:underline"
+                className="text-gray-500 font-bold hover:underline"
               >
                 Signup
               </Link>

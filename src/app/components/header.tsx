@@ -45,22 +45,22 @@ const HeaderItem = ({ phoneNo }: IProps) => {
       <div
         className={`${
           isOpen ? "w-64" : "w-0"
-        } fixed top-0 left-0 h-screen bg-white border-r border-pink-300 transition-all duration-300 overflow-y-auto z-40`}
+        } fixed top-0 left-0 h-screen bg-white border-r border-gray-900 transition-all duration-300 overflow-y-auto z-40`}
       >
-        <div className="flex items-center justify-between p-4 border-b border-pink-300">
+        <div className="flex items-center justify-between p-4 border-b border-gray-700">
           <div className="gap-2 text-gray-700 flex flex-row items-center">
-            <UserGroupIcon className="h-10 w-10 text-pink-500 " />
-            <h2 className="text-xl font-bold text-pink-600">Chat With</h2>
+            <UserGroupIcon className="h-10 w-10 text-gray-700 " />
+            <h2 className="text-xl font-bold text-gray-700">Chat With</h2>
           </div>
           <button onClick={() => setIsOpen(false)}>
-            <XMarkIcon className="h-5 w-5 text-pink-600" />
+            <XMarkIcon className="h-5 w-5 text-gray-900" />
           </button>
         </div>
         <div className="p-4">
           <input
             type="text"
             placeholder="Search friends..."
-            className="w-full p-2 border border-pink-300 rounded-md focus:outline-none"
+            className="w-full p-2 border border-gray-900 rounded-md focus:outline-none"
           />
         </div>
         <ul className="mt-4 px-5 space-y-3">
@@ -68,17 +68,17 @@ const HeaderItem = ({ phoneNo }: IProps) => {
             <li key={i}>
               <Link
                 href={`/${name.toLowerCase()}`}
-                className="rounded  text-pink-500 "
+                className="rounded  text-gray-600 "
               >
-                <div className="flex p-2 gap-2 items-center hover:bg-pink-300 cursor-pointer">
-                  <UserIcon className="h-5 w-5 text-pink-600" />
+                <div className="flex p-2 gap-2 items-center hover:bg-gray-300 cursor-pointer">
+                  <UserIcon className="h-5 w-5 text-gray-600" />
                   {name}
                 </div>
               </Link>
             </li>
           ))}
         </ul>
-        <button className="w-60 mt-4 ml-2 bg-pink-600 text-white font-semibold py-2 rounded-lg hover:bg-pink-700 transition duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+        <button className="w-60 mt-4 ml-2 bg-gray-700 text-white font-semibold py-2 rounded-lg hover:bg-gray-900 transition duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
           Add New Friend
         </button>
       </div>
@@ -90,7 +90,7 @@ const HeaderItem = ({ phoneNo }: IProps) => {
         }`}
       >
         {/* Header */}
-        <div className="bg-pink-500 text-white">
+        <div className="bg-gray-700 text-white">
           <div className="px-6 py-3 flex justify-between items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -135,11 +135,11 @@ const HeaderItem = ({ phoneNo }: IProps) => {
 
         {/* Welcome Section (Reduce height of this section) */}
         <div className="flex flex-col items-center justify-center text-center py-12">
-          <UserGroupIcon className="h-20 w-40 text-pink-600 " />
-          <h1 className="text-3xl font-bold text-pink-600 mb-2">
+          <UserGroupIcon className="h-20 w-40 text-gray-600 " />
+          <h1 className="text-3xl font-bold text-gray-600 mb-2">
             Welcome to TalkTown
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-900 text-lg">
             Choose a friend or add a new one to start chatting.
           </p>
         </div>
