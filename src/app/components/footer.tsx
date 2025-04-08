@@ -10,7 +10,7 @@ interface IProps {
 
 const Footer = ({ address, phoneNo, email }: IProps) => {
   return (
-    <footer className="bg-pink-700 text-white py-10">
+    <footer className="bg-pink-700 text-white py-10 mt-20">
       <div className="container max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         {/* Contact Info */}
         <div>
