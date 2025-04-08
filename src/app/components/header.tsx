@@ -14,6 +14,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-toastify";
+import SubscriptionCard from "./SubscriptionCard";
+import { PenTool } from "lucide-react";
 
 interface IProps {
   phoneNo: string;
@@ -38,7 +40,7 @@ const HeaderItem = ({ phoneNo }: IProps) => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex flex-col min-h-screen">
       {/* Sidebar */}
       <div
         className={`${
@@ -47,7 +49,6 @@ const HeaderItem = ({ phoneNo }: IProps) => {
       >
         <div className="flex items-center justify-between p-4 border-b border-pink-300">
           <div className="gap-2 text-gray-700 flex flex-row items-center">
-            {/* Page content goes here */}
             <UserGroupIcon className="h-10 w-10 text-pink-500 " />
             <h2 className="text-xl font-bold text-pink-600">Chat With</h2>
           </div>
@@ -67,7 +68,7 @@ const HeaderItem = ({ phoneNo }: IProps) => {
             <li key={i}>
               <Link
                 href={`/${name.toLowerCase()}`}
-                className="rounded  text-pink-800 "
+                className="rounded  text-pink-500 "
               >
                 <div className="flex p-2 gap-2 items-center hover:bg-pink-300 cursor-pointer">
                   <UserIcon className="h-5 w-5 text-pink-600" />
@@ -77,19 +78,19 @@ const HeaderItem = ({ phoneNo }: IProps) => {
             </li>
           ))}
         </ul>
-        <button className="w-60 mt-30 ml-2  bg-pink-600 text-white font-semibold py-2  rounded-lg hover:bg-pink-700 transition duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+        <button className="w-60 mt-4 ml-2 bg-pink-600 text-white font-semibold py-2 rounded-lg hover:bg-pink-700 transition duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
           Add New Friend
         </button>
       </div>
 
       {/* Main Content Area */}
       <div
-        className={`flex-1 min-h-screen transition-all duration-300 ${
+        className={`flex-1 transition-all duration-300 ${
           isOpen ? "ml-64" : "ml-0"
         }`}
       >
         {/* Header */}
-        <div className="bg-pink-600 text-white">
+        <div className="bg-pink-500 text-white">
           <div className="px-6 py-3 flex justify-between items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -132,7 +133,38 @@ const HeaderItem = ({ phoneNo }: IProps) => {
           </div>
         </div>
 
-        {/* Body Content Placeholder */}
+        {/* Welcome Section (Reduce height of this section) */}
+        <div className="flex flex-col items-center justify-center text-center py-12">
+          <UserGroupIcon className="h-20 w-40 text-pink-600 " />
+          <h1 className="text-3xl font-bold text-pink-600 mb-2">
+            Welcome to TalkTown
+          </h1>
+          <p className="text-gray-600 text-lg">
+            Choose a friend or add a new one to start chatting.
+          </p>
+        </div>
+
+        {/* Subscription Cards */}
+        <div className="flex flex-row items-start gap-5 justify-center text-center mt-10">
+          <SubscriptionCard
+            title="Yearly Subscription"
+            description="Get full access to all premium features, updates, and priority support for an entire year. Save more compared to monthly billing."
+            icon={PenTool}
+            buttonText={"PKR 8,000"}
+          />
+          <SubscriptionCard
+            title="Monthly Subscription"
+            description="Enjoy flexible access to all premium features with a low monthly payment. Cancel anytime with no commitment."
+            icon={PenTool}
+            buttonText={"PKR 2,000"}
+          />
+          <SubscriptionCard
+            title="Free Trial"
+            description="Enjoy a 7-day free trial with full access to all features—no hidden fees or obligations. Start today and explore everything we offer!"
+            icon={PenTool}
+            buttonText={"PKR 0"}
+          />
+        </div>
       </div>
     </div>
   );
