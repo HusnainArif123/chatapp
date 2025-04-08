@@ -28,7 +28,7 @@ const CaseCard: React.FC<CaseCardProps> = ({
         </div>
 
         <div className="mt-4">
-          <button className="bg-white text-black rounded-full shadow px-5 py-1 hover:bg-gray-100">
+          <button className="bg-white text-black rounded-full shadow px-5 py-1 hover:bg-gray-500">
             {buttonText}
           </button>
         </div>
