@@ -18,13 +18,13 @@ const Footer = ({ address, phoneNo, email }: IProps) => {
             Contact Us
           </h3>
           <p className="text-base flex justify-center  leading-relaxed">
-            Address:{address}
+            {address}
           </p>
           <p className="text-base flex justify-center  leading-relaxed">
-            Phone: {phoneNo}
+            {phoneNo}
           </p>
           <p className="text-base flex justify-center  leading-relaxed">
-            Email: {email}
+            {email}
           </p>
         </div>
 
@@ -90,7 +90,7 @@ const Footer = ({ address, phoneNo, email }: IProps) => {
       </div>
 
       <div className="text-center text-sm mt-10 border-t border-pink-400 pt-4 flex justify-center ">
-        © 2024 TalkTown. All rights reserved.
+        © 2025 TalkTown. All rights reserved.
       </div>
     </footer>
   );
