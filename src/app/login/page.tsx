@@ -19,7 +19,8 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.post("/api/login", user);
-
+      router.push("/home");
+      toast.success("Login Successfully");
       console.log("Data:", response.data);
     } catch (error: any) {
       toast.error(error.response.data.error);
