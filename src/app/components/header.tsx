@@ -19,9 +19,11 @@ import { PenTool } from "lucide-react";
 
 interface IProps {
   phoneNo: string;
+  handleAddFriend: () => void;
+  fiendsData: any;
 }
 
-const HeaderItem = ({ phoneNo }: IProps) => {
+const HeaderItem = ({ phoneNo, handleAddFriend, fiendsData }: IProps) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
@@ -38,6 +40,8 @@ const HeaderItem = ({ phoneNo }: IProps) => {
       setLoading(false);
     }
   };
+
+  console.log(fiendsData, "helelelo feinddata");
 
   return (
     <div className="flex flex-col ">
@@ -64,21 +68,21 @@ const HeaderItem = ({ phoneNo }: IProps) => {
           />
         </div>
         <ul className="mt-4 px-5 space-y-3">
-          {["Asad", "Malik", "Jutt", "Ayesha"].map((name, i) => (
+          {fiendsData?.map((friend: any, i: number) => (
             <li key={i}>
-              <Link
-                href={`/${name.toLowerCase()}`}
-                className="rounded  text-gray-600 "
-              >
+              <Link href={`/${friend.name.toLowerCase()}`}>
                 <div className="flex p-2 gap-2 items-center hover:bg-gray-300 cursor-pointer">
                   <UserIcon className="h-5 w-5 text-gray-600" />
-                  {name}
+                  {friend.name}
                 </div>
               </Link>
             </li>
           ))}
         </ul>
-        <button className="w-60 mt-4 ml-2 bg-gray-700 text-white font-semibold py-2 rounded-lg hover:bg-gray-900 transition duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+        <button
+          onClick={handleAddFriend}
+          className="w-60 mt-4 ml-2 bg-gray-700 text-white font-semibold py-2 rounded-lg hover:bg-gray-900 transition duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+        >
           Add New Friend
         </button>
       </div>
