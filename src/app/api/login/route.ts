@@ -26,7 +26,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid Password" }, { status: 400 });
     }
 
-    //create a token data
 
     const tokenData = {
       id: findUser._id,
